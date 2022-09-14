@@ -11,8 +11,9 @@ import { StoreContext } from "../../store/store-context";
 import { fetcher, isEmpty } from "../../utils";
 import useSWR from "swr";
 
+let isInital = true;
+
 const CoffeeStore = (initialProps) => {
-  let isInital = true;
   const {
     state: { coffeeStores },
   } = useContext(StoreContext);
