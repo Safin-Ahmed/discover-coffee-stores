@@ -13,13 +13,12 @@ const getCoffeeStoreById = async (req, res) => {
     const records = await findRecordByFilter(id);
 
     if (records.length !== 0) {
-      res.json(records);
+      return res.json(records);
     } else {
-      res.json({ message: `id could not be found` });
+      return res.json({ message: `id could not be found` });
     }
-    res.json({ message: `id is created ${id}` });
   } catch (e) {
-    res.status(500).json({ message: "Something Went Wrong", error: e });
+    return res.status(500).json({ message: "Something Went Wrong", error: e });
   }
 };
 
